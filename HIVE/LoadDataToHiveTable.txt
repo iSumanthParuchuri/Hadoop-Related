@@ -1,0 +1,6 @@
+HDFS:
+hdfs dfs -copyFromLocal C:/Users/DELL/Downloads/Bussiness.csv /Test/Business/
+
+
+HIVE LOAD:
+LOAD DATA INPATH 'hdfs:/Test/Business/Bussiness.csv' INTO TABLE Business

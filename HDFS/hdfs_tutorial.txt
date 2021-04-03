@@ -1,0 +1,46 @@
+1. List in directory
+hdfs dfs -ls /
+hdfs dfs -ls -R /
+
+2. Make new directory
+hdfs dfs -mkdir /Test
+
+3. copyFromLocal (or) put: To copy files/folders from local file system to hdfs store. 
+This is the most important command. Local filesystem means the files present on the OS.
+hdfs dfs -copyFromLocal C:/Users/DELL/OneDrive/Documents/SysSetup/C.xlsx /Test
+
+4. Size of each file in directory
+hdfs dfs -du /Test
+
+5. Size of complete directory
+hdfs dfs -dus /Test
+
+6. Directory or file last modified time
+hdfs dfs -stat /Test
+
+7. To change the replication factor to 4 for a directory
+Note: The -w means wait till the replication is completed. And -R means recursively, we use it for directories as they may also contain many files and 
+folders inside them.
+hdfs dfs -setrep -R -w 4 /Test
+
+8. To show commands list
+hdfs dfs
+
+9. mv: This command is used to move files within hdfs. Lets cut-paste a file
+hdfs dfs -mv /Test/hdfs_tutorial.txt /Test/SysSetup/
+
+11. rmr: This command deletes a file from HDFS recursively.
+hdfs dfs -rmr /Test/SysSetup/
+ 
+12. cp: This command is used to copy files within hdfs.
+hdfs dfs -cp /Test/hdfs_tutorial.txt /Test/SysSetup/
+
+13. rm: This command deletes a file from HDFS but fails when passed a directory with submodules
+hdfs dfs -rm /Test/C.xlsx
+
+14. touchz: It creates an empty file.
+hdfs dfs -touchz /Test/A.txt
+
+Majorly used : -copyFromLocal | -put | -cp | -mv | -rm | -rmv | -mkdir | 
+
+
